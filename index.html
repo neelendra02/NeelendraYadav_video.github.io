@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Video Editing Portfolio</title>
+</head>
+<body>
+    <header>
+      
+        <div class="container">
+        
+            <table>
+                <tr>
+                    <td>
+                        <div class="header-text">
+                            <!-- <p>Video Editor</p> -->
+                            <!-- <h1>Hi, I'm  -->
+                                <h1>
+                                <br><span>Neelendra Yadav</span></h1>
+                        </div>
+                    </td>
+                   
+                </tr>   
+            </table>
+            
+        </div>
+    </header>
+    
+
+
+
+    <div class="containerv" id="video-container">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 NEELENDRA YADAV | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const videos = [
+            {
+               src: "day 17 final.mp4",                
+               title: "YouTube Client Project",                
+               description: "A professionally edited video crafted for a client's YouTube channel, enhancing engagement and storytelling."
+            },
+            {
+                src: "VID-20241205-WA0002.mp4",                
+                title: "Podcast Episode Edit",                
+                description: "A seamless edit for a podcast episode, focusing on clarity and listener engagement."
+            },
+            {
+                src: "final reel.mp4",                
+                title: "Instagram Reel Creation",                
+                description: "Crafted a captivating Instagram reel to enhance my social media presence and engagement."
+                
+            }
+        ];
+
+        const container = document.getElementById("video-container");
+
+        videos.forEach(video => {
+            const videoItem = document.createElement("div");
+            videoItem.classList.add("video-item");
+
+            const videoElement = document.createElement("video");
+            videoElement.src = video.src;
+            videoElement.controls = true;
+
+            const description = document.createElement("div");
+            description.classList.add("description");
+            description.innerHTML = `
+                <h3>${video.title}</h3>
+                <p>${video.description}</p>
+            `;
+
+            videoItem.appendChild(videoElement);
+            videoItem.appendChild(description);
+
+            container.appendChild(videoItem);
+        });
+    </script>
+</body>
+</html>
